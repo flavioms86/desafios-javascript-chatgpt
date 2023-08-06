@@ -15,33 +15,35 @@ console.log(verifiquePrimo(10)); // Deve imprimir false
 // Resolução
 
 function verifiquePrimo(numero) {
-    const conjunto = criarArrayNumerosMenores(numero);
-    let primo = false;
+  const conjunto = criarArrayNumerosMenores(numero);
+  let primo = false;
 
-    for (let i = 0; i < conjunto.length; i++) {
-        for (let j = 0; j < conjunto.length; j++) {
-            if ((conjunto[i] * conjunto[j]) === numero) {
-                return primo = false;
-            } else {
-                primo = true;
-            }
-        }
+  for (let i = 0; i < conjunto.length; i++) {
+    for (let j = 0; j < conjunto.length; j++) {
+      if ((conjunto[i] * conjunto[j]) === numero) {
+        return primo = false;
+      } else {
+        primo = true;
+      }
     }
-    return primo;
+  }
+  return primo;
 }
 
 function criarArrayNumerosMenores(numeroCriarArray) {
-    let contador = numeroCriarArray - 1;
-    const conjuntoNumerosMenores = [];
-    while (contador >= 1) {
-        conjuntoNumerosMenores.push(contador);
-        contador--;
-    }
-    return conjuntoNumerosMenores;
+  let contador = numeroCriarArray - 1;
+  const conjuntoNumerosMenores = [];
+  while (contador >= 1) {
+    conjuntoNumerosMenores.push(contador);
+    contador--;
+  }
+  return conjuntoNumerosMenores;
 }
 
 // Feedback ChatGPT:
 
+// No final tem uma sugestão de um codigo mais limpo para
+// fazer a mesma coisa.
 
 // Ótimo trabalho! Sua função verifiquePrimo parece estar
 // funcionando corretamente. Você criou uma lógica usando
@@ -88,3 +90,21 @@ function criarArrayNumerosMenores(numeroCriarArray) {
 // Com essa modificação, a função irá retornar false
 // assim que encontrar um par que resulte em numero,
 // caso contrário, retornará true, indicando que é um número primo.
+
+// Sugestão ChatGPT
+
+/*
+
+function verifiquePrimo(numero) {
+  if (numero <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+*/
