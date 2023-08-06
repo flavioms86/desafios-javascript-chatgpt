@@ -22,3 +22,18 @@ function conteVogais(texto) {
 
     return contador;
 }
+
+// Sugestão ChatGPT:
+
+/*
+
+function conteVogais(texto) {
+  let contador = 0;
+  for (let caractere of texto) {
+    if ("aeiouAEIOU".includes(caractere)) {
+      contador++;
+    }
+  }
+  return contador;
+}
+*/
