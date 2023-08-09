@@ -16,5 +16,18 @@
 // Exemplo de entrada e saída:
 
 const texto = "Eu gosto de programar em JavaScript.";
+
+// Resolução
+
+function conteCaracteresPalavras(texto) {
+  const tamanhoTexto = texto.length;
+  const textoSeparado = texto.split(" ");
+  const palavrasObj = {
+    "caracteres": tamanhoTexto,
+    "palavras": textoSeparado.length
+  }
+  return palavrasObj;
+}
+
 console.log(conteCaracteresPalavras(texto)); // Deve imprimir { "caracteres": 36, "palavras": 6 }
 
