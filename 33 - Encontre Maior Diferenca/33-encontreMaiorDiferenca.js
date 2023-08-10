@@ -6,36 +6,34 @@
 
 // Exemplo de entrada e saída:
 
-const array = [2, 7, 1, 4, 9];
-console.log(encontreMaiorDiferenca(array)); // Deve imprimir 5 (diferença entre 7 e 2)
+const array = [2, 7, 1, 4, 9, 5, 3, 8, 6, 10, 18];
 
+// Resolução
+const encontreMaiorDiferenca = (array) => {
+  if (array.length <= 2) {
+    return null;
+  }
 
-/*
+  let maiorDiferenca = 0;
 
-Algoritmo perda minima rackerrank
-function solucao(precos) {
-const menoresPrejuizos = [];
-
-let index = 0;
-let menorValor = precos[0];
-
-
-
-while (index < precos.length) {
-  for (let i = 0; i < precos.length; i++) {
-    if (precos[index] > precos[i + index]) {
-        menoresPrejuizos.push(precos[index] - precos[i + index])
+  for (let i = 0; i < array.length; i++) {
+    if (array[i + 1] === undefined) {
+      return maiorDiferenca;
     }
-  }
-  index++;
-}
+    if (array[i] > array[i + 1]) {
+      let resultado = array[i] - array[i + 1];
+      if (maiorDiferenca < resultado) {
+        maiorDiferenca = resultado;
+      }
+    } else {
+      let resultado = array[i + 1] - array[i];
+      if (maiorDiferenca < resultado) {
+        maiorDiferenca = resultado;
+      }
+    };
+  };
+  return maiorDiferenca;
+};
 
-for (let i = 0; i < menoresPrejuizos.length; i++) {
-  if(menoresPrejuizos[i] < menorValor) {
-    menorValor = menoresPrejuizos[i];
-  }
-}
 
-console.log(menorValor);
-}
-*/
+console.log(encontreMaiorDiferenca(array)); // Deve imprimir 6 (diferença entre 7 e 1)
