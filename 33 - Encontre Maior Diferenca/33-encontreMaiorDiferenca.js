@@ -6,7 +6,7 @@
 
 // Exemplo de entrada e saída:
 
-const array = [2, 7, 1, 4, 9, 5, 3, 8, 6, 10, 18];
+const array = [2, 7, 1, 4, 9];
 
 // Resolução
 const encontreMaiorDiferenca = (array) => {
